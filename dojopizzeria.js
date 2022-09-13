@@ -70,3 +70,5 @@ function randomPizza(){
     return pizza;
 }
 console.log(randomPizza());
+
+"Hello World"
