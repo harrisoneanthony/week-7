@@ -7,15 +7,59 @@ function pizzaOven(crustType, sauceType, cheese, toppings){
     return pizza;
 }
 
-var s1 = pizzaOven("deep dish", "traditional",["mozzarella"],["pepperoni", "sausage"]);
-console.log(s1);
+var p1 = pizzaOven("deep dish", "traditional",["mozzarella"],["pepperoni", "sausage"]);
+console.log(p1);
 
-var s2 = pizzaOven("hand tossed", "marinara", ["mozzarella", "feta"], ["mushrooms", "olives", "onions"]);
-console.log(s2);
+var p2 = pizzaOven("hand tossed", "marinara", ["mozzarella", "feta"], ["mushrooms", "olives", "onions"]);
+console.log(p2);
 
-var s3 = pizzaOven("cauliflower", "sugar-free", "lactose-free", "rabbit food");
-console.log(s3);
+var p3 = pizzaOven("cauliflower", "sugar-free", "lactose-free", "rabbit food");
+console.log(p3);
 
-var s4 = pizzaOven("sourdough", "ranch dressing", ["mozzarella", "blue cheese"], ["buffalo chicken", "bacon"]);
-console.log(s4);
+var p4 = pizzaOven("sourdough", "ranch dressing", ["mozzarella", "blue cheese"], ["buffalo chicken", "bacon"]);
+console.log(p4);
 
+
+var crustType = [
+    "deep dish",
+    "stuffed crust",
+    "thin crust",
+    "pretzel",
+    "cauliflower"
+]
+var sauceType = [
+    "marinara",
+    "tomato basil",
+    "white sauce",
+    "bbq",
+    "garlic"
+]
+var cheese = [
+    "mozzarella",
+    "feta",
+    "goat cheese",
+    "four cheese",
+    "blue cheese"
+]
+var toppings = [
+    "pepperoni",
+    "buffalo chicken",
+    "sausage",
+    "meatball",
+    "mushrooms"
+]
+
+function randomIngredient(arr){
+    var i =  Math.floor(Math.random()*arr.length);
+    return arr[i];
+}
+
+function randomPizza(){
+    var pizza = {};
+    pizza.crustType = randomIngredient(crustType);
+    pizza.sauceType = randomIngredient(sauceType);
+    pizza.cheese = randomIngredient(cheese);
+    pizza.toppings = randomIngredient(toppings);
+    return pizza;
+}
+console.log(randomPizza());
