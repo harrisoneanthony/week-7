@@ -49,6 +49,10 @@ var toppings = [
     "mushrooms"
 ]
 
+function randomRange(max, min){
+    return Math.floor(Math.random() * max - min) + min;
+}
+
 function randomIngredient(arr){
     var i =  Math.floor(Math.random()*arr.length);
     return arr[i];
@@ -59,7 +63,10 @@ function randomPizza(){
     pizza.crustType = randomIngredient(crustType);
     pizza.sauceType = randomIngredient(sauceType);
     pizza.cheese = randomIngredient(cheese);
-    pizza.toppings = randomIngredient(toppings);
+    pizza.toppings = [];
+    for (var i = 0; i<randomRange(3, 0); i++){
+        pizza.toppings.push(randomIngredient(toppings));
+    }
     return pizza;
 }
 console.log(randomPizza());
